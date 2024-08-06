@@ -1,13 +1,10 @@
 <?php
 
-use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\SettingController;
 use App\Http\Controllers\AdminAuthController;
 
 // General Public Route
@@ -29,8 +26,7 @@ Route::fallback(function () {
 
 // Guest Route
 Route::middleware(['guest'])->group(function () {
-    Route::get('/ggg', [UserController::class, 'ggg'])->name('ggg');
-    Route::post('/tap', [UserController::class, 'tap'])->name('tap')->middleware('auth', 'check.custom.headers');
+    //Route::post('/tap', [UserController::class, 'tap'])->name('tap')->middleware('auth', 'check.custom.headers');
     // Other routes that need the custom header check
 });
 
